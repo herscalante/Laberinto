@@ -1,0 +1,2 @@
+# Laberinto
+Generador de laberinto
