@@ -5,17 +5,14 @@
  */
 package laberintogeneradormdi;
 
+import laberinto.Ventana;
+
 /**
  *
- * @author Alumno
+ * @author electro
  */
 public class LaberintoGeneradorMDI {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        new Ventana().setVisible(true);
     }
-    
 }
