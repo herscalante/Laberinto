@@ -18,7 +18,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 /**
  *
- * @author Jeremias Reyes, Leandro Navarrete
+ * @author Jeremias Reyes, Leandro Navarrete, Hernan Escalante
  */
 public class Ventana extends javax.swing.JFrame {
     /**
@@ -44,7 +44,7 @@ public class Ventana extends javax.swing.JFrame {
         lblColumnas = new javax.swing.JLabel();
         btnSolucionar = new javax.swing.JButton();
         panelLaberinto = new laberinto.LaminaLaberinto();
-        jButton1 = new javax.swing.JButton();
+        btnInfo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Generador Laberintos");
@@ -107,14 +107,14 @@ public class Ventana extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setForeground(new java.awt.Color(0, 102, 102));
-        jButton1.setText("Información");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
-        jButton1.setFocusable(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnInfo.setBackground(new java.awt.Color(255, 255, 255));
+        btnInfo.setForeground(new java.awt.Color(0, 102, 102));
+        btnInfo.setText("Información");
+        btnInfo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        btnInfo.setFocusable(false);
+        btnInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnInfoActionPerformed(evt);
             }
         });
 
@@ -134,7 +134,7 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(btnSolucion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSolucionar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGenerar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -153,7 +153,7 @@ public class Ventana extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addComponent(btnSolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 173, Short.MAX_VALUE))
                     .addComponent(panelLaberinto, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))
                 .addContainerGap())
@@ -272,28 +272,26 @@ public class Ventana extends javax.swing.JFrame {
         panelLaberinto.repaint();
         if ((panelLaberinto.getDatosMov().actual == panelLaberinto.getLaberinto().getArbol().getHojaFin().getAnterior() || panelLaberinto.getDatosMov().actual == panelLaberinto.getLaberinto().getArbol().getHojaFin().getEnlaceArriba() || panelLaberinto.getDatosMov().actual == panelLaberinto.getLaberinto().getArbol().getHojaFin().getEnlaceIzquierdo())) {
             JOptionPane.showMessageDialog(this, "Felicidades, has superado el laberinto en " + (panelLaberinto.getDatosMov().cantMovimientos + 1) + " movimientos", "Laberinto superado", JOptionPane.INFORMATION_MESSAGE);
-            panelLaberinto.setJugar(false);
-            panelLaberinto.setMovimiento(false);
-            panelLaberinto.repaint();
+           panelLaberinto.setJugar(false);
+           panelLaberinto.setMovimiento(false);
+           panelLaberinto.repaint();
         }
+        
+        
+        
 
     }//GEN-LAST:event_btnSolucionarKeyPressed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
         // TODO add your handling code here:
 
-        JOptionPane.showMessageDialog(null, "        Generador de laberintos"
+        JOptionPane.showMessageDialog(null, "                               Generador de laberintos\nMateria: Metodologia de la investigacion\nAño:"
+                + " 2018\nProfesor: Carlos Rodriguez\nIntegrantes: Jeremias Reyes - Leandro Navarrete - Hernan Escalante"
                 + "\n");
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnInfoActionPerformed
 
-    //Metodo para poner el icono
-    //@Override
-    // public Image getIconImage() {
-    //         Image retValue = Toolkit.getDefaultToolkit().
-    //         getImage(ClassLoader.getSystemResource("Imagenes/laberinto.png"));
-    //     return retValue;
-    // }
+  
     /**
      * @param args the command line arguments
      */
@@ -325,9 +323,9 @@ public class Ventana extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerar;
+    private javax.swing.JButton btnInfo;
     private javax.swing.JButton btnSolucion;
     private javax.swing.JButton btnSolucionar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblColumnas;
     private laberinto.LaminaLaberinto panelLaberinto;
     private javax.swing.JSpinner spnCantColumnas;
