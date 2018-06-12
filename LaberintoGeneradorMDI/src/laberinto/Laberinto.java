@@ -123,7 +123,6 @@ public class Laberinto {
 
         } else if (actual == matrizDeNodos[0][tam - 1]) {                       
             int num = rnd.nextInt(2);                                           //Se genera un numero aleatorio entre 0 y 1
-            System.out.println("Num: "+num);
             if (num == 0) {                                                     //Hace referencia al Enlace izquierdo    
                 datos.setSiguienteNodo(0);
             }
@@ -284,7 +283,7 @@ public class Laberinto {
                     continue;
                 } else {
                     actual.setEnlaceIzquierdo(matrizDeNodos[datos.getFila()][datos.getColumna() - 1]);      //
-                    System.out.println("Izq: "+actual.getEnlaceIzquierdo());
+                    
                     NodoArbol anterior = actual;
                     actual = actual.getEnlaceIzquierdo();
                     actual.setAnterior(anterior);
@@ -297,7 +296,7 @@ public class Laberinto {
                     continue;
                 } else {
                     actual.setEnlaceArriba(matrizDeNodos[datos.getFila() - 1][datos.getColumna()]);
-                    System.out.println("Arriba: "+actual.getEnlaceArriba());
+                    
                     NodoArbol anterior = actual;
                     actual = actual.getEnlaceArriba();
                     actual.setAnterior(anterior);
@@ -310,7 +309,7 @@ public class Laberinto {
                     continue;
                 } else {
                     actual.setEnlaceDerecho(matrizDeNodos[datos.getFila()][datos.getColumna() + 1]);
-                    System.out.println("Derecha: "+actual.getEnlaceDerecho());
+                    
                     NodoArbol anterior = actual;
                     actual = actual.getEnlaceDerecho();
                     actual.setAnterior(anterior);
@@ -324,7 +323,7 @@ public class Laberinto {
                 } else {
                     
                     actual.setEnlaceAbajo(matrizDeNodos[datos.getFila() + 1][datos.getColumna()]);
-                    System.out.println("Abajo: "+actual.getEnlaceAbajo());
+                    
                     NodoArbol anterior = actual;
                     actual = actual.getEnlaceAbajo();
                     actual.setAnterior(anterior);
