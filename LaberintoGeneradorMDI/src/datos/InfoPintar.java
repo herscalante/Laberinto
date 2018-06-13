@@ -6,7 +6,7 @@ import arbol.NodoArbol;
 
 /**
  *
- * @author Jeremias Reyes, Leandro Navarrete, Hernan Escalante
+ * @author Jeremias Reyes, Leandro Navarrete
  */
 
 //Clase encargada de dar las coordenadas para pintar

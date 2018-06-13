@@ -1,21 +1,8 @@
 package laberinto;
-
-import arbol.NodoArbol;
-import laberinto.LaminaLaberinto;
 import datos.InfoMovimiento;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
-import java.io.*;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author Jeremias Reyes, Leandro Navarrete, Hernan Escalante
@@ -195,9 +182,12 @@ public class Ventana extends javax.swing.JFrame {
         panelLaberinto.setJugar(true);
         panelLaberinto.setMovimiento(false);
         panelLaberinto.repaint();
+        JOptionPane.showMessageDialog(null, "Instrucciones:\nMueva el cuadrado con las flechas de "
+                + "direccion, presione enter cuando haya llegado a destino");
     }//GEN-LAST:event_btnSolucionarActionPerformed
 
     private void btnSolucionarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSolucionarKeyPressed
+        
         if (panelLaberinto.isJugar() == false) {
             return;
         }
@@ -269,15 +259,31 @@ public class Ventana extends javax.swing.JFrame {
                 panelLaberinto.getDatosMov().direccion = "abajo";
             }
         }
-        panelLaberinto.repaint();
-        if ((panelLaberinto.getDatosMov().actual == panelLaberinto.getLaberinto().getArbol().getHojaFin().getAnterior() || panelLaberinto.getDatosMov().actual == panelLaberinto.getLaberinto().getArbol().getHojaFin().getEnlaceArriba() || panelLaberinto.getDatosMov().actual == panelLaberinto.getLaberinto().getArbol().getHojaFin().getEnlaceIzquierdo())) {
-            JOptionPane.showMessageDialog(this, "Felicidades, has superado el laberinto en " + (panelLaberinto.getDatosMov().cantMovimientos + 1) + " movimientos", "Laberinto superado", JOptionPane.INFORMATION_MESSAGE);
-           panelLaberinto.setJugar(false);
-           panelLaberinto.setMovimiento(false);
-           panelLaberinto.repaint();
+        
+        
+        
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if(panelLaberinto.getDatosMov().actual == panelLaberinto.getLaberinto().getArbol().getHojaFin() ){
+                JOptionPane.showMessageDialog(this, "Felicidades, has superado el laberinto en " + (panelLaberinto.getDatosMov().cantMovimientos ) + " movimientos", "Laberinto superado", JOptionPane.INFORMATION_MESSAGE);
+                panelLaberinto.setJugar(false);
+                panelLaberinto.setMovimiento(false);
+                panelLaberinto.repaint();
+                
+            }
+            else{
+                return;
+            }
         }
+        panelLaberinto.repaint();
+        //if ((panelLaberinto.getDatosMov().actual == panelLaberinto.getLaberinto().getArbol().getHojaFin().getAnterior() || panelLaberinto.getDatosMov().actual == panelLaberinto.getLaberinto().getArbol().getHojaFin().getEnlaceArriba() || panelLaberinto.getDatosMov().actual == panelLaberinto.getLaberinto().getArbol().getHojaFin().getEnlaceIzquierdo())) {
+         //   JOptionPane.showMessageDialog(this, "Felicidades, has superado el laberinto en " + (panelLaberinto.getDatosMov().cantMovimientos + 1) + " movimientos", "Laberinto superado", JOptionPane.INFORMATION_MESSAGE);
+         //  panelLaberinto.setJugar(false);
+         //  panelLaberinto.setMovimiento(false);
+         //  panelLaberinto.repaint();
+        //}
         
         
+         
         
 
     }//GEN-LAST:event_btnSolucionarKeyPressed
@@ -330,4 +336,6 @@ public class Ventana extends javax.swing.JFrame {
     private laberinto.LaminaLaberinto panelLaberinto;
     private javax.swing.JSpinner spnCantColumnas;
     // End of variables declaration//GEN-END:variables
+
+
 }

@@ -1,11 +1,11 @@
 package arbol;
 /**
  *
- * @author Jeremias Reyes, Leandro Navarrete, Hernan Escalante
+ * @author Jeremias Reyes, Leandro Navarrete
  */
 
 
-//Clase del arbol
+//Clase para el manejo del arbol
 public class Arbol {
     private NodoArbol raiz;
     private NodoArbol hojaFin;

@@ -2,10 +2,6 @@ package datos;
 
 import arbol.NodoArbol;
 
-/**
- *
- * @author Jeremias Reyes, Leandro Navarrete, Hernan Escalante
- */
 
 //Clase encargada de la informacion de movimientos
 public class InfoMovimiento {

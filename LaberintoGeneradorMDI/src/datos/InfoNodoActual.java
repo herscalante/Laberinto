@@ -2,7 +2,7 @@ package datos;
 
 /**
  *
- * @author Jeremias Reyes, Leandro Navarrete, Hernan Escalante
+ * @author Jeremias Reyes, Leandro Navarrete
  */
 
 //Clase que nos da la informacion del nodo donde se esta posicionado

@@ -1,5 +1,4 @@
 package laberinto;
-
 import arbol.Arbol;
 import arbol.NodoArbol;
 import datos.InfoNodoActual;

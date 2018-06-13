@@ -2,7 +2,7 @@ package arbol;
 
 /**
  *
- * @author Jeremias Reyes, Leandro Navarrete, Hernan Escalante
+ * @author Jeremias Reyes, Leandro Navarrete
  */
 
 //Clase encargada del manejo de los nodos de los arboles

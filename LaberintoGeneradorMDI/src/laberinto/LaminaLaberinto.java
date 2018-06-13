@@ -1,6 +1,4 @@
 package laberinto;
-
-import laberinto.Laberinto;
 import arbol.Arbol;
 import arbol.NodoArbol;
 import datos.InfoMovimiento;
@@ -8,10 +6,6 @@ import datos.InfoPintar;
 import lista.Lista;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.io.PrintWriter;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 /*
@@ -22,6 +16,7 @@ import javax.swing.JPanel;
  *
  * @author Leandro Navarrete, Jeremias Reyes, Hernan Escalante
  */
+
 //Clase encargada de la parte grafica del laberinto
 public class LaminaLaberinto extends JPanel {
 
